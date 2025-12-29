@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maroc et ses villes</title>
+    <style>
+       
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 1000px;
+            margin: 0 auto; 
+         background-color: #c03926;
+         font-family: 'Arial', sans-serif;
+
+        }
+
+      
+        .hero {
+            position: relative;
+            height: 400px;
+            overflow: hidden;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            border: 10px solid green; 
+            box-sizing: border-box;
+        }
+
+        .background-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1;
+            transform: translate(-50%, -50%);
+            border-radius: 0;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-overlay h1 {
+            color: white;
+            font-size: 48px;
+        }
+
+       
+        .cities {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .city-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .city-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .city-card h2 {
+            color: #007BFF;
+            margin: 15px 0 10px 0;
+        }
+
+        .city-card p {
+            padding: 0 15px 15px 15px;
+               margin: 0 15px 15px;
+        color: #555;}
+    .map-section {
+    padding: 40px;
+    background-color: #c0392b; 
+    display: flex;
+    justify-content: center;
+}
+
+.map-container {
+    position: relative;
+    max-width: 1000px;
+    width: 100%;
+}
+
+.map-image {
+    width: 100%;
+    display: block;
+    border: 5px solid #000; 
+    border-radius: 15px;
+}
+
+.city-marker {
+    position: absolute;
+    transform: translate(-50%, -100%); 
+    color: #fff;
+    font-weight: bold;
+}
+
+.city-marker .arrow {
+    font-size: 2rem;
+    display: block;
+    color: yellow; 
+}
+
+.city-marker p {
+    margin-top: 5px;
+    font-size: 1rem;
+    background: rgba(0,0,0,0.5);
+    padding: 2px 5px;
+    border-radius: 5px;
+}
+
+    </style>
+</head>
+ <body>
+
+    <section class="hero">
+        <video autoplay muted loop class="background-video">
+            <source src="maroc.mp4" type="video/mp4">
+          
+        </video>
+        <div class="hero-overlay">
+        </div>
+    </section>
+
+   
+    <section class="cities">
+        <div class="city-card">
+            <img src="marrakech.jpg" alt="Marrakech">
+            <h2>Marrakech</h2>
+            <p>Connue pour ses souks colorés, sa médina historique et la célèbre place Jemaa el-Fna.</p>
+        </div>
+        <div class="city-card">
+            <img src="casablanca.jpg" alt="Casablanca">
+            <h2>Casablanca</h2>
+            <p>Centre économique du Maroc avec la mosquée Hassan II et une architecture moderne.</p>
+        </div>
+        <div class="city-card">
+            <img src="fes.jpg" alt="Fès">
+            <h2>Fès</h2>
+            <p>Réputée pour sa médina, ses artisans et l’université Al Quaraouiyine, la plus ancienne du monde.</p>
+        </div>
+        <div class="city-card">
+            <img src="rabat.jpg" alt="Rabat">
+            <h2>Rabat</h2>
+            <p>Capitale du Maroc, célèbre pour la Kasbah des Oudayas, la Tour Hassan et son patrimoine historique.</p>
+        </div>
+        <div class="city-card">
+            <img src="chefchaouen.jpg" alt="Chefchaouen">
+            <h2>Chefchaouen</h2>
+            <p>Connue pour ses maisons bleues et son ambiance relaxante dans les montagnes du Rif.</p>
+        </div>
+    </section>
+<section class="map-section">
+    <div class="map-container">
+        <img src="maroc map.jpg" alt="Carte du Maroc" class="map-image">
+
+       
+        <div class="city-marker" style="top: 60%; left: 40%;">
+            <span class="arrow">⬆</span>
+            <p>Marrakech</p>
+        </div>
+
+        <div class="city-marker" style="top: 30%; left: 50%;">
+            <span class="arrow">⬆</span>
+            <p>Casablanca</p>
+        </div>
+
+        <div class="city-marker" style="top: 25%; left: 60%;">
+            <span class="arrow">⬆</span>
+            <p>Rabat</p>
+        </div>
+
+        <div class="city-marker" style="top: 20%; left: 70%;">
+            <span class="arrow">⬆</span>
+            <p>Fès</p>
+        </div>
+
+        <div class="city-marker" style="top: 10%; left: 20%;">
+            <span class="arrow">⬆</span>
+            <p>Chefchaouen</p>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>
